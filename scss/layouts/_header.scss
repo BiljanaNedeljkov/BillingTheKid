@@ -1,0 +1,52 @@
+@import "../helpers/mixins";
+
+header{
+    @include clearfix;
+    background-color: $dark-blue;
+    color: white;
+    
+   
+    .home{
+        float: right;
+        background-color: $red;
+        height: 4em;
+        img{
+            height: 100%;
+            padding: 1em;
+        }
+    }
+    nav{
+        float: right;
+        li{
+            padding: 1.5em;
+            display: inline-block;
+            &:hover{
+                text-decoration: underline;
+            }
+           
+            a{
+                text-decoration: none;
+                padding: 1em;
+                color: white;
+
+            }
+            
+        }
+    }
+
+}
+@include mobile{
+    header{
+        .home{
+            float: none;
+        }
+        nav{
+            li{
+                float: none;
+                width: 100%;
+                text-align: center;
+               
+            }
+        }
+    }
+}

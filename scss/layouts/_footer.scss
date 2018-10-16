@@ -1,0 +1,12 @@
+@import "../helpers/mixins";
+
+footer{
+    background-color: $dark-blue;
+    text-align: center;
+    padding: 1em;
+    color: white;
+    a{
+        color: $red;
+        text-decoration: none;
+    }
+}

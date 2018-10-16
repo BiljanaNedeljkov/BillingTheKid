@@ -1,0 +1,294 @@
+@import "../helpers/mixins";
+
+section {
+    text-align: center;
+    padding: 5% 15%;
+
+    h2 {
+        color: $dark-blue;
+        text-transform: uppercase;
+    }
+
+    p {
+        color: $font-color;
+    }
+
+    &:nth-child(odd) {
+        background-color: $bkg-sections;
+    }
+
+
+}
+
+// First section
+#hero {
+    height: 80vh;
+    position: relative;
+    background-image: url("../slike/intro.jpg");
+    background-size: cover;
+    padding: 0;
+
+    .welcome {
+        position: absolute;
+        bottom: 0;
+        background-color: rgba($dark-blue, 0.6);
+        width: 100%;
+        text-align: center;
+        padding: 1em;
+
+        p,
+        h1 {
+            color: white;
+        }
+
+        h1 {
+            font-size: 3em;
+        }
+    }
+}
+
+@include mobile {
+    #hero {
+        height: auto;
+        background-image: none;
+        background-color: black;
+
+        .welcome {
+
+            position: static;
+        }
+    }
+}
+
+// Second section
+.buttons {
+    @include clearfix;
+
+    button {
+        float: right;
+        border: 1px solid $hover-buttons;
+        border-radius: 30px;
+        padding: 1em;
+        margin-right: 1em;
+        font-size: 0.7em;
+
+        &:hover {
+            background-color: $hover-buttons;
+            color: white;
+        }
+    }
+}
+
+// Third section
+
+.content {
+    img {
+        width: 25%;
+        border-radius: 50%;
+    }
+
+    p {
+        color: $red;
+    }
+
+    figure {
+        @include clearfix;
+
+        &:nth-child(odd) {
+            img {
+                float: left;
+                opacity: 0.5;
+            }
+
+            figcaption {
+                text-align: left;
+                padding: 2em;
+                display: none;
+            }
+
+
+        }
+
+
+        &:nth-child(even) {
+            img {
+                float: right;
+                opacity: 0.5;
+            }
+
+            figcaption {
+                text-align: right;
+                padding: 2em;
+                display: none;
+            }
+
+        }
+
+    }
+}
+
+@include mobile {
+    .content {
+        figure {
+            margin: auto;
+
+            &:nth-child(odd) {
+
+                img {
+                    float: none;
+                    opacity: 1;
+                }
+
+                figcaption {
+                    text-align: center;
+                    padding: 2em;
+                    display: block;
+                }
+
+
+            }
+
+
+            &:nth-child(even) {
+                img {
+                    float: none;
+                    opacity: 1;
+                }
+
+                figcaption {
+                    text-align: right;
+                    padding: 2em;
+                    display: block;
+
+                }
+
+            }
+
+        }
+    }
+}
+
+// Forth section
+
+table {
+    width: 80%;
+    ;
+
+    th,
+    td {
+        padding: 1em;
+        border: 1px solid $font-color;
+    }
+
+    margin: 0 auto;
+
+    th {
+        background-color: $red;
+    }
+
+    .blank {
+        border: none;
+    }
+
+    th,
+    .black {
+        color: white;
+    }
+
+    .black {
+        background-color: $dark-blue;
+    }
+}
+
+h2,
+p {
+    margin-bottom: 2em;
+}
+
+button {
+
+    border: 1px solid $hover-buttons;
+    border-radius: 30px;
+    padding: 1em;
+    margin-right: 1em;
+    font-size: 0.7em;
+    display: none;
+
+    &:hover {
+        background-color: $hover-buttons;
+        color: white;
+    }
+}
+
+@include mobile {
+    table {
+        display: none;
+    }
+
+    button {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+// Fifth section
+
+.contact {
+    @include clearfix;
+
+    .map {
+        float: left;
+    }
+
+    .form {
+        padding: 1em;
+        background-color: $red;
+        float: right;
+
+        select,
+        input {
+            margin-bottom: 1em;
+            padding-left: 0.5em;
+            height: 1.5em;
+        }
+
+
+        select {
+            width: 30%;
+            margin-right: 4%;
+
+        }
+
+        #name {
+            width: 65%;
+        }
+
+        #email {
+            width: 100%;
+
+        }
+
+        #message {
+            width: 100%;
+            height: 5em;
+            padding: 0.5em;
+        }
+    }
+}
+
+@include tablet {
+    .contact {
+        .map {
+            margin-bottom: 2em;
+            float: none;
+            
+        }
+
+        
+        .form {
+            float: none;
+            margin-top: 5em ;
+        }
+
+    }
+}
